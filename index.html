@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Happy Birthday 🎉</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&family=Playfair+Display:wght@600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <canvas id="particles"></canvas>
+    <audio id="bgMusic" src="hbd.aac" loop></audio>
+
+    <!-- LANDING -->
+    <section class="page active" id="landing">
+      <div class="section-box letter-box" onclick="openLetter()">
+        <div class="decor decor-left">💌</div>
+        <div class="decor decor-right">✨</div>
+
+        <div class="envelope" id="envelope">✉️</div>
+
+        <h1 class="typing" data-text="A Letter For You"></h1>
+        <p class="hint">Tap the letter to open</p>
+      </div>
+    </section>
+
+    <!-- HOME -->
+    <section class="page" id="home">
+      <div class="section-box">
+        <div class="decor decor-left">🎈</div>
+        <div class="decor decor-right">🎊</div>
+
+        <div class="theme-switch">
+          <button onclick="setTheme('default')">🤍</button>
+          <button onclick="setTheme('romantic')">💖</button>
+          <button onclick="setTheme('luxury')">👑</button>
+        </div>
+
+        <h1 class="typing" data-text="Happy Birthday Xei 🎉"></h1>
+        <h2 class="typing" data-text="You are 16 Years Old"></h2>
+        <div class="gift-wrapper">
+          <div
+            class="tenor-gif-embed"
+            data-postid="1016302300481921729"
+            data-share-method="host"
+            data-aspect-ratio="1.29577"
+            data-width="100%"
+          >
+            <a href="https://tenor.com/view/sanrio-gif-1016302300481921729">
+              Sanrio Sticker
+            </a>
+            from
+            <a href="https://tenor.com/search/sanrio-stickers"
+              >Sanrio Stickers</a
+            >
+          </div>
+        </div>
+
+        <script
+          type="text/javascript"
+          async
+          src="https://tenor.com/embed.js"
+        ></script>
+        <button onclick="goTo('memories')">Next</button>
+      </div>
+    </section>
+
+    <!-- MEMORIES -->
+    <section class="page" id="memories">
+      <div class="section-box">
+        <h1 class="typing" data-text="Our Memories 📸"></h1>
+        <div class="gallery">
+          <img src="images/foto1.jpeg" /><img src="images/foto2.jpeg" />
+          <img src="images/foto3.jpeg" /><img src="images/foto4.jpeg" />
+          <img src="images/foto5.jpeg" /><img src="images/foto6.jpeg" />
+          <img src="images/foto1.jpeg" /><img src="images/foto8.jpeg" />
+        </div>
+        <button onclick="goTo('cake')">Next</button>
+      </div>
+    </section>
+
+    <!-- IMAGE PREVIEW MODAL -->
+    <div id="imageModal" class="image-modal">
+      <img id="modalImg" src="" alt="Preview" />
+    </div>
+
+    <!-- CAKE -->
+    <section class="page" id="cake">
+      <div class="section-box">
+        <h1 class="typing" data-text="Make a Wish "></h1>
+        <div class="cake fancy-cake">
+          <div class="layer layer-bottom"></div>
+          <div class="layer layer-middle"></div>
+          <div class="layer layer-top"></div>
+
+          <div class="icing"></div>
+
+          <div class="candle">
+            <div class="flame" id="flame"></div>
+          </div>
+        </div>
+
+        <button onclick="toggleCandle()">Blow / Light Candle</button>
+        <button onclick="goTo('video')">Next</button>
+      </div>
+    </section>
+
+    <!-- VIDEO -->
+    <section class="page" id="video">
+      <div class="section-box">
+        <h1 class="typing" data-text="Your Favorite Song 🎵"></h1>
+        <video src="video.mp4" controls></video>
+        <button onclick="goTo('cards')">Next</button>
+      </div>
+    </section>
+
+    <!-- CARDS -->
+    <section class="page" id="cards">
+      <div class="section-box">
+        <h1 class="typing" data-text="Special For You 💖"></h1>
+        <div class="cards">
+          <div class="card long-card">
+            <p>
+              HAPPYYY BIRTHDAYYY OIIII PINOKKKK, mogaa panjang umurr, sehat
+              selalu yaqww sampe 1000 taun ajah pas kok ☺️
+            </p>
+
+            <p>
+              Maaf yaa klo ak buat salah yg bisa nyinggung kamuu. Aku sejujurnya
+              seneng bisa ketemu kamu, bisa ngobrol bareng, bisa canda bareng,
+              bisa marah bareng, trus sampe ketawa bareng.
+            </p>
+
+            <p>
+              Makasih yahh udah mau temenan dan akrab sama aku. Moga kamu bisa
+              banggain keluargamu dan terus berusaha. I hope you can always be
+              happy, be the best, and achieve success!!
+            </p>
+
+            <p>
+              Jangan lupa yaa minum, makan, tidur, dll. Jangan pernah asing ya…
+              Aku kangen masa kita bisa gila bareng 😭
+            </p>
+
+            <p>Nanti ku kasih es krim kalau ketemu yaa :3</p>
+
+            <p class="signature">— Crish mau rui</p>
+          </div>
+
+          <div class="card">
+            <p>
+              HBD yaa! 🥳 Semoga makin kece, makin sabar ngadepin hidup (dan
+              ngadepin aku juga 😆), rezeki lancar, dan bahagia terus, maaf
+              kalau misalnya ada statement ku yang ga mengenakan, jangan di bawa
+              ke hati yak
+            </p>
+            <p class="signature">— Fariz WEB</p>
+          </div>
+        </div>
+        <button onclick="goTo('landing')">Back to Start</button>
+      </div>
+    </section>
+
+    <!-- MUSIC TOGGLE BUTTON -->
+    <button id="musicToggle" class="music-toggle">⏸️</button>
+
+    <script src="script.js"></script>
+  </body>
+</html>
